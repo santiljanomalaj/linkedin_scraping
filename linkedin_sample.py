@@ -102,9 +102,7 @@ for x in range(100):
         profile_name = profile.find('span', {'class':'name actor-name'}).text
         last_name_len = len(last_name)
         if (profile_name[0:last_name_len] != last_name):
-          profile_infos[0]=profile_name
-          profile_infos[1] = profile.find('div', {'class':'presence-entity presence-entity--size-4 ember-view'}).img['src']
-          urllib.request.urlretrieve(profile_infos[1], "./profile_images/"+profile_infos[0]+".jpg")
+      
 
           c.execute("""INSERT into profiles(name,image_url) VALUES (%s,%s)""",(profile_infos[0],profile_infos[1]))
           conn.commit()
