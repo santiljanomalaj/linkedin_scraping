@@ -79,19 +79,7 @@ for profile_list in profile_lists:
 for x in range(100):
   if(x>1):
     driver.get("https://www.linkedin.com/search/results/all/?keywords="+last_name+"&origin=GLOBAL_SEARCH_HEADER&page="+str(x))
-    time.sleep(2)
-    driver.execute_script("window.scrollTo(0, 200);")
-    time.sleep(2)
-    driver.execute_script("window.scrollTo(200, 400);")
-    time.sleep(2)
-    driver.execute_script("window.scrollTo(400, 600);")
-    time.sleep(2)
-    driver.execute_script("window.scrollTo(600, 800);")
-    time.sleep(2)
-    driver.execute_script("window.scrollTo(800, 1000);")
-    time.sleep(2)
-    driver.execute_script("window.scrollTo(1000, 1200);")
-    time.sleep(5)
+
     profile_cont = soup(driver.page_source, 'html.parser')
     profile_li = profile_cont.findAll('li', {'class':'search-result search-result__occluded-item ember-view'})
 
